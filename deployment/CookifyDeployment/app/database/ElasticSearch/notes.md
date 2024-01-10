@@ -1,0 +1,4 @@
+I'm not running multiple instances. The pvc status is 'bound'. The container and settings works perfectly locally with docker. But there is this event in the kubectl describe pod (its at the ver beginning): Events:
+  Type     Reason                  Age                    From                     Message
+  ----     ------                  ----                   ----                     -------
+  Warning  FailedScheduling        6m6s (x2 over 6m9s)    default-scheduler        0/7 nodes are available: 7 pod has unbound immediate PersistentVolumeClaims. preemption: 0/7 nodes are available: 7 Preemption is not helpful for scheduling.

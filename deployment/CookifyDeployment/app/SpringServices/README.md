@@ -1,0 +1,1 @@
+* All the resource requests and limits need to be stress tested to find optimal values (THIS HAS NOT BEEN DONE YET)

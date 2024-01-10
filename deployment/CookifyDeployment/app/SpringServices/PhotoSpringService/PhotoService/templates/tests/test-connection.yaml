@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "PhotoService.fullname" . }}-test-connection"
+  labels:
+    {{- include "PhotoService.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "PhotoService.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never

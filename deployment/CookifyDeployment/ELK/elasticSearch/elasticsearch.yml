@@ -1,0 +1,17 @@
+clusterName: "docker-cluster"
+networkHost: "0.0.0.0"
+
+esConfig:
+  elasticsearch.yml: |
+    xpack.security.enabled: false
+
+image: "docker.elastic.co/elasticsearch/elasticsearch"
+imageTag: "8.6.1"  # replace with your version
+
+podAnnotations:
+  consul.hashicorp.com/connect-inject: "true"
+
+
+service:
+  httpPort: 9200
+  transportPort: 9300

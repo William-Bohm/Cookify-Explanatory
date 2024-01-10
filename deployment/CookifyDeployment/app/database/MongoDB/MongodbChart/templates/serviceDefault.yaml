@@ -1,0 +1,7 @@
+apiVersion: consul.hashicorp.com/v1alpha1
+kind: ServiceDefaults
+metadata:
+  name: {{ include "mongodb.fullname" . }}
+  namespace: default
+spec:
+  protocol: "http"

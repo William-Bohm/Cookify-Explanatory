@@ -1,0 +1,52 @@
+---
+apiVersion: consul.hashicorp.com/v1alpha1
+kind: ServiceIntentions
+metadata:
+  name: mongodb
+spec:
+  destination:
+    name: mongodb
+  sources:
+    - name: videoservice
+      action: allow
+    - name: photoservice
+      action: allow
+    - name: userservice
+      action: allow
+    - name: nutritionservice
+      action: allow
+    - name: reciepservice
+      action: allow
+---
+apiVersion: consul.hashicorp.com/v1alpha1
+kind: ServiceIntentions
+metadata:
+  name: elasticsearchautocomplete
+spec:
+  destination:
+    name: elasticsearchautocomplete
+  sources:
+    - name: fulltextsearch
+      action: allow
+---
+apiVersion: consul.hashicorp.com/v1alpha1
+kind: ServiceIntentions
+metadata:
+  name: neo4jrecomendation
+spec:
+  destination:
+    name: neo4jrecomendation
+  sources:
+    - name: recomendationservice
+      action: allow
+---
+apiVersion: consul.hashicorp.com/v1alpha1
+kind: ServiceIntentions
+metadata:
+  name: mysql
+spec:
+  destination:
+    name: mysql
+  sources:
+    - name: jwtservice
+      action: allow
